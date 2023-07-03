@@ -1,9 +1,9 @@
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 <h2>My Heroes</h2>
-<ul class="heroes">
+<ul class="heroes" style="display: flex; flex-direction: row;flex-wrap: wrap;">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-    <button type="button" [class.selected]='hero === selectedHero'>
+    <button type="button" [class.selected]='hero === selectedHero' style="width: fit-content;">
       <span class="badge">{{hero.id}}</span>
       <span class="name">{{hero.name}}</span>
     </button>
