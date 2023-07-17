@@ -1,0 +1,14 @@
+a {
+padding: 1rem;
+  background-color: #43505f;
+  color: azure;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: overline !important;
+  transition-property: text-decoration;
+}
+
+
+a:hover{
+  text-decoration: underline!important;
+}
