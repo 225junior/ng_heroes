@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { ActivatedRoute } from '@angular/router';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,5 +9,15 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent {
-@Input() hero?: Hero
+  @Input() hero?: Hero;
+
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService
+  ) { }
+
+  getHero() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+  }
 }
